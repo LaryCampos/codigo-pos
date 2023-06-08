@@ -1,0 +1,38 @@
+<script>
+    // LIFO - Stack 
+    console.log('Pilha/stack');
+    class BrowserHistoryStack{
+
+        constructor(){
+            this.cursor = 0;
+            this.data = [];
+        }
+        push(item){
+            this.cursor = this.cursor + 1;
+            this.data.push(item);
+        }
+        back() {     // pop()
+            this.cursor = this.cursor - 1;
+            //this.data.pop();
+        }
+        clear() { // clear
+            this.data =[];
+        }
+        
+        print(){
+            console.log('Cursor', this.cursor);
+            console.log('itens atuais', this.data);
+        }
+    }
+
+    const history = new BrowserHistoryStack();
+    history.push('https://google.com');
+    history.push('https://youtube.com');
+    history.push('https://facebook.com');
+    history.print(); 
+    history.back();
+    //voltar para  aba anterior
+    //history.pop();
+    history.print(); 
+
+</script>
